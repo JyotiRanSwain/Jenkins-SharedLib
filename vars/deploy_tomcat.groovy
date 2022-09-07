@@ -1,3 +1,3 @@
 def call () {
-deploy adapters: [tomcat7(credentialsId: '78022f04-c7fa-45bb-851e-f6bb3b7e3ff0', path: '', url: 'http://3.111.198.203:8282/')], contextPath: null, war: '**/*.war'
+sh "scp -o StrictHostKeyChecking=no **/*.war ec2-user@3.111.198.203:/opt/tomcat/webapps/"
 }
